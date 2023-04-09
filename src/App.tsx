@@ -54,7 +54,7 @@ function App() {
           <h1>Guess the word</h1>
         </Col>
       </Row>
-      {words.map((w, key) => <Word key={key} word={w} guess={handleGuess} />)}
+      {words.map((w, key) => <Word key={`${key}${w.word}`} word={w} guess={handleGuess} />)}
       <hr style={{ marginBottom: '5em' }}/>
     </Container>
   )
