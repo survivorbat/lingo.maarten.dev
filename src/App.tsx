@@ -4,10 +4,32 @@ import './App.css'
 import { Col, Container, Row } from 'react-bootstrap'
 import Word from './components/Word'
 import GameWord from './logic/game-word'
-import { getKeys } from 'js-synonyms/dist/interface'
 
-const wordRegex = /^\w+$/
-const possibleWords = getKeys().filter((w) => wordRegex.test(w))
+const possibleWords = [
+  'hello',
+  'happy',
+  'lunch',
+  'breakfast',
+  'world',
+  'planet',
+  'every',
+  'about',
+  'self',
+  'other',
+  'change',
+  'system',
+  'differ',
+  'okay',
+  'never',
+  'story',
+  'procedure',
+  'letter',
+  'code',
+  'java',
+  'script',
+  'python',
+  'pipeline'
+]
 
 const randomWord = (): string => {
   return possibleWords[Math.floor(Math.random() * possibleWords.length)]
@@ -33,6 +55,7 @@ function App() {
         </Col>
       </Row>
       {words.map((w, key) => <Word key={key} word={w} guess={handleGuess} />)}
+      <hr style={{ marginBottom: '5em' }}/>
     </Container>
   )
 }
