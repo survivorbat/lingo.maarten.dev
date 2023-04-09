@@ -1,9 +1,9 @@
 .tile-input {
     background: none;
     border: none;
-    border-bottom: gray solid 1px;
+    border-bottom: gray solid 2px;
     width: 1em;
-    font-size: 4em;
+    font-size: 3em;
     text-align: center;
 }
 

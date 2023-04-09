@@ -1,8 +1,8 @@
 enum TileState {
-  Empty,
-  Incorrect,
-  Misplaced,
-  Correct,
+  Empty = 'empty',
+  Incorrect = 'incorrect',
+  Misplaced = 'misplaced',
+  Correct = 'correct',
 }
 
 export default TileState

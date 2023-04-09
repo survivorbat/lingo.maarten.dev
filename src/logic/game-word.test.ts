@@ -114,6 +114,17 @@ describe('Word', () => {
           new GameTile('a', TileState.Misplaced),
         ],
       },
+      {
+        expected: 'hello',
+        guess: 'lllll',
+        tiles: [
+          new GameTile('l', TileState.Incorrect),
+          new GameTile('l', TileState.Incorrect),
+          new GameTile('l', TileState.Correct),
+          new GameTile('l', TileState.Correct),
+          new GameTile('l', TileState.Incorrect),
+        ],
+      },
     ]
 
     wordData.forEach(({ expected, guess, tiles }) => {

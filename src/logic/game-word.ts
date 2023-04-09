@@ -45,21 +45,33 @@ export default class GameWord {
     // Copy letterCount so we can mutate it
     const currentCounter = this.letterCount
 
-    this.tiles = guess.split('').map((l, index) => {
+    const guessLetters = guess.split('')
+
+    // First we have to process all correct letters so we can lower the counter
+    guessLetters.forEach((l, index) => {
       if (this.letters[index] === l) {
         currentCounter[l] -= 1
-        return new GameTile(l, TileState.Correct)
+        this.tiles[index] = new GameTile(l, TileState.Correct)
+      }
+    })
+
+    // Then process all the incorrect ones
+    guessLetters.forEach((l, index) => {
+      // Ignore the correct ones now
+      if (this.letters[index] === l) {
+        return
       }
 
       if (this.word.includes(l)) {
         currentCounter[l] -= 1
 
         if (currentCounter[l] >= 0) {
-          return new GameTile(l, TileState.Misplaced)
+          this.tiles[index] = new GameTile(l, TileState.Misplaced)
+          return
         }
       }
 
-      return new GameTile(l, TileState.Incorrect)
+      this.tiles[index] = new GameTile(l, TileState.Incorrect)
     })
 
     return false
