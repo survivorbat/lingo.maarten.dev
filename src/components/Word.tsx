@@ -8,16 +8,31 @@ import { Button, Col, Row } from 'react-bootstrap'
 interface WordProps {
   word: GameWord
   guess: (guess: string) => void
+  disabled: boolean
 }
 
-function Word({ word, guess }: WordProps) {
+function Word({ word, guess, disabled }: WordProps) {
   const [input, setInput] = useState(new Array(word.tiles.length).fill(' '))
   const [focus, setFocus] = useState(0)
 
   const handleInput = (letter: string, index: number) => {
     input[index] = letter
     setInput([...input])
+    handleMoveRight()
+  }
+
+  const handleMoveLeft = () => {
+    setFocus((focus === 0) ? word.tiles.length - 1 : focus - 1)
+  }
+
+  const handleMoveRight = () => {
     setFocus((focus === word.tiles.length - 1) ? 0 : focus + 1)
+  }
+
+  const handleBackspace = (index: number) => {
+    handleMoveLeft()
+    input[index] = ''
+    setInput([...input])
   }
 
   const handleSubmit = (e: FormEvent) => {
@@ -34,11 +49,12 @@ function Word({ word, guess }: WordProps) {
               tile={tile}
               focus={focus === key}
               input={input[key]}
-              disabled={false}
+              disabled={disabled}
+              moveLeft={handleMoveLeft}
+              moveRight={handleMoveRight}
+              backspace={() => { handleBackspace(key) }}
               onClick={() => { setFocus(key) }}
-              onChange={(l) => {
-                handleInput(l, key)
-              }}
+              onChange={(l) => { handleInput(l, key) }}
             />
           </Col>
         ))}

@@ -5,6 +5,11 @@
     width: 1em;
     font-size: 3em;
     text-align: center;
+    transition: 200ms;
+}
+
+.tile-input:hover {
+    font-size: 2.5em;
 }
 
 .tile-misplaced {
