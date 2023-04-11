@@ -12,7 +12,7 @@ interface WordProps {
 }
 
 function Word({ word, guess, disabled }: WordProps) {
-  const [input, setInput] = useState(new Array(word.tiles.length).fill(' '))
+  const [input, setInput] = useState(new Array(word.tiles.length).fill(''))
   const [focus, setFocus] = useState(0)
 
   const handleInput = (letter: string, index: number) => {

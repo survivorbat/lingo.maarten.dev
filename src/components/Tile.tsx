@@ -67,6 +67,7 @@ function Tile({ onChange, input, disabled, focus, onClick, tile, moveRight, move
       onKeyDown={handleKeyDown}
       readOnly={disabled}
       value={input}
+      pattern="^[a-zA-Z]$"
       ref={(input) => {
         if (focus) {
           input?.focus()
