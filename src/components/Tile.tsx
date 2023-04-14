@@ -24,7 +24,7 @@ function Tile({
   tile,
   moveRight,
   moveLeft,
-  backspace,
+  backspace
 }: TileProps) {
   let style = 'tile-empty'
   let title = 'Fill in a letter and press enter to verify'

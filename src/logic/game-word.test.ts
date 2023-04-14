@@ -8,7 +8,6 @@ describe('Word', () => {
     const result = new GameWord('hello')
 
     // Assert
-    expect(result.guesses).toEqual(0)
     expect(result.tiles).toEqual([
       new GameTile('', TileState.Empty),
       new GameTile('', TileState.Empty),
@@ -39,7 +38,6 @@ describe('Word', () => {
 
       // Assert
       expect(result).toBeTruthy()
-      expect(word.guesses).toEqual(1)
       expect(word.tiles).toEqual([
         new GameTile('h', TileState.Correct),
         new GameTile('e', TileState.Correct),

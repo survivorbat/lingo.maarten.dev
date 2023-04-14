@@ -40,7 +40,7 @@ const possibleWords = [
   'war',
   'peace',
   'now',
-  'future',
+  'future'
 ]
 
 const randomWord = (): string => {
