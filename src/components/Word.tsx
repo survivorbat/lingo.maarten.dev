@@ -22,11 +22,13 @@ function Word({ word, guess, disabled }: WordProps) {
   }
 
   const handleMoveLeft = () => {
-    setFocus((focus === 0) ? 0 : focus - 1)
+    setFocus(focus === 0 ? 0 : focus - 1)
   }
 
   const handleMoveRight = () => {
-    setFocus((focus === word.tiles.length - 1) ? word.tiles.length - 1 : focus + 1)
+    setFocus(
+      focus === word.tiles.length - 1 ? word.tiles.length - 1 : focus + 1
+    )
   }
 
   const handleBackspace = (index: number) => {
@@ -52,9 +54,15 @@ function Word({ word, guess, disabled }: WordProps) {
               disabled={disabled}
               moveLeft={handleMoveLeft}
               moveRight={handleMoveRight}
-              backspace={() => { handleBackspace(key) }}
-              onClick={() => { setFocus(key) }}
-              onChange={(l) => { handleInput(l, key) }}
+              backspace={() => {
+                handleBackspace(key)
+              }}
+              onClick={() => {
+                setFocus(key)
+              }}
+              onChange={(l) => {
+                handleInput(l, key)
+              }}
             />
           </Col>
         ))}

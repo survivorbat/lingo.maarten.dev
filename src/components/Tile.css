@@ -1,25 +1,25 @@
 .tile-input {
-    background: none;
-    border: none;
-    border-bottom: gray solid 2px;
-    width: 1em;
-    font-size: 3em;
-    text-align: center;
-    transition: 200ms;
+  background: none;
+  border: none;
+  border-bottom: gray solid 2px;
+  width: 1em;
+  font-size: 3em;
+  text-align: center;
+  transition: 200ms;
 }
 
 .tile-input:hover {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
 
 .tile-misplaced {
-    border-bottom-color: yellow;
+  border-bottom-color: yellow;
 }
 
 .tile-correct {
-    border-bottom-color: green;
+  border-bottom-color: green;
 }
 
 .tile-incorrect {
-    border-bottom-color: red;
+  border-bottom-color: red;
 }

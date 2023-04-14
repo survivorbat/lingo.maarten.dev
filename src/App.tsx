@@ -40,7 +40,7 @@ const possibleWords = [
   'war',
   'peace',
   'now',
-  'future'
+  'future',
 ]
 
 const randomWord = (): string => {
@@ -66,8 +66,15 @@ function App() {
           <h1>Guess the word</h1>
         </Col>
       </Row>
-      {words.map((w, key) => <Word disabled={key !== words.length - 1} key={`${key}${w.word}`} word={w} guess={handleGuess} />)}
-      <hr style={{ marginBottom: '5em' }}/>
+      {words.map((w, key) => (
+        <Word
+          disabled={key !== words.length - 1}
+          key={`${key}${w.word}`}
+          word={w}
+          guess={handleGuess}
+        />
+      ))}
+      <hr style={{ marginBottom: '5em' }} />
     </Container>
   )
 }

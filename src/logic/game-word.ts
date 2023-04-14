@@ -2,8 +2,6 @@ import GameTile from './game-tile'
 import TileState from './state'
 
 export default class GameWord {
-  guesses: number = 0
-
   tiles: GameTile[]
 
   private readonly letters: string[]
@@ -31,8 +29,6 @@ export default class GameWord {
   }
 
   guess(guess: string): boolean {
-    this.guesses += 1
-
     if (guess.length !== this.word.length) {
       throw new Error('invalid length')
     }

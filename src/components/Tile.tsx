@@ -15,7 +15,17 @@ interface TileProps {
   backspace: () => void
 }
 
-function Tile({ onChange, input, disabled, focus, onClick, tile, moveRight, moveLeft, backspace }: TileProps) {
+function Tile({
+  onChange,
+  input,
+  disabled,
+  focus,
+  onClick,
+  tile,
+  moveRight,
+  moveLeft,
+  backspace,
+}: TileProps) {
   let style = 'tile-empty'
   let title = 'Fill in a letter and press enter to verify'
 
